@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private void setUpFoodList() {
         RecyclerView foodListRV = findViewById(R.id.list);
 
-        foodList = repository.getFoodList();
+        foodList = repository.getSortedFoodList();
         // Create adapter passing in the sample user data
         FoodListAdapter adapter = new FoodListAdapter(foodList);
         // Attach the adapter to the recyclerview to populate items

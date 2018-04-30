@@ -13,13 +13,13 @@ public class Repository {
 
     public List<Food> getFoodList() {
         List<Food> foodList = new ArrayList<>();
-        foodList.add(new Food("Strawberry", Food.Category.FRUIT));
         foodList.add(new Food("Chicken", Food.Category.MEAT));
         foodList.add(new Food("Broccoli", Food.Category.VEGETABLE));
         foodList.add(new Food("Asparagus", Food.Category.VEGETABLE));
         foodList.add(new Food("Pork", Food.Category.MEAT));
         foodList.add(new Food("Watermelon", Food.Category.FRUIT));
         foodList.add(new Food("Banana", Food.Category.FRUIT));
+        foodList.add(new Food("Strawberry", Food.Category.FRUIT));
 
         return foodList;
     }
@@ -29,6 +29,7 @@ public class Repository {
      */
     public List<Food> getSortedFoodList() {
         List<Food> foodList = getFoodList();
+        sortFoodListByName(foodList);
         sortFoodListByCategory(foodList);
         return foodList;
     }
@@ -43,6 +44,21 @@ public class Repository {
                     return 1;
                 } else {
                     return -1;
+                }
+            }
+        });
+    }
+
+    private void sortFoodListByName(List<Food> food) {
+        Collections.sort(food, new Comparator<Food>() {
+            @Override
+            public int compare(Food o1, Food o2) {
+                if (o1.getName().compareTo(o2.getName()) == 1) {
+                    return 1;
+                } else if (o1.getName().compareTo(o2.getName()) == -1) {
+                    return -1;
+                } else {
+                    return 0;
                 }
             }
         });

@@ -18,11 +18,15 @@ public class Food {
             case FRUIT:
                 return 1;
             case MEAT:
-                return 2;
-            case VEGETABLE:
                 return 3;
+            case VEGETABLE:
+                return 2;
             default:
                 return -1;
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }
