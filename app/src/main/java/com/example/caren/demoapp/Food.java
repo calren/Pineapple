@@ -13,14 +13,18 @@ public class Food {
         FRUIT, VEGETABLE, MEAT
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int getFoodCategoryRank() {
         switch (type) {
             case FRUIT:
-                return 1;
-            case MEAT:
-                return 2;
-            case VEGETABLE:
                 return 3;
+            case MEAT:
+                return 1;
+            case VEGETABLE:
+                return 2;
             default:
                 return -1;
         }

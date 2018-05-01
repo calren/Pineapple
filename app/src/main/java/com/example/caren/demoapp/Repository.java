@@ -32,7 +32,11 @@ public class Repository {
         sortFoodListByCategory(foodList);
         return foodList;
     }
-
+    public List<Food> getSortedFoodListName(){
+        List<Food> foodList = getFoodList();
+        sortFoodListByName(foodList);
+        return foodList;
+    }
     private void sortFoodListByCategory(List<Food> food) {
         Collections.sort(food, new Comparator<Food>() {
             @Override
@@ -47,4 +51,16 @@ public class Repository {
             }
         });
     }
+
+    public void sortFoodListByName(List<Food> food) {
+        Collections.sort(food, new Comparator<Food>() {
+            @Override
+            public int compare(Food o1, Food o2) {
+                int res = 0;
+                return (res != 0) ? res : o1.getName().compareTo(o2.getName());
+            }
+        });
+    }
+
+
 }
