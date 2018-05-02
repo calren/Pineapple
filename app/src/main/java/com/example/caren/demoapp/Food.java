@@ -15,9 +15,9 @@ public class Food {
 
     public int getFoodCategoryRank() {
         switch (type) {
-            case FRUIT:
-                return 1;
             case MEAT:
+                return 1;
+            case FRUIT:
                 return 2;
             case VEGETABLE:
                 return 3;

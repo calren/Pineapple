@@ -30,6 +30,7 @@ public class Repository {
     public List<Food> getSortedFoodList() {
         List<Food> foodList = getFoodList();
         sortFoodListByCategory(foodList);
+        foodList = sortedFoodName(foodList);
         return foodList;
     }
 
@@ -47,4 +48,23 @@ public class Repository {
             }
         });
     }
+
+    public List<Food> sortedFoodName(List<Food> food) {
+        List<String> listName = new ArrayList<String>();
+        listName.add(food.get(0).toString());
+        listName.add(food.get(1).toString());
+        listName.add(food.get(2).toString());
+        listName.add(food.get(3).toString());
+        listName.add(food.get(4).toString());
+        listName.add(food.get(5).toString());
+        listName.add(food.get(6).toString());
+        Collections.sort(listName);
+
+        List<Food> result = new ArrayList<String>() {
+            for(int i = 0; i < )
+        }
+        food = new ArrayList<List<Food>>(listName);
+        return food;
+    }
+
 }
